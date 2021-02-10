@@ -1,0 +1,20 @@
+[package]
+name = "jane-doe"
+version = "0.1.0"
+authors = ["Daniel S. Roche <dsroche@gmail.com>"]
+edition = "2018"
+description = "Generate random name combinations based on frequency data."
+repository = "https://github.com/dsroche/jane-doe/"
+license = "0BSD"
+categories = ["command-line-utilities", "text-processing"]
+default-run = "jane-doe"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bloomfilter = "1.0.3"
+clap = "2.33.3"
+csv = "1.1.5"
+include_dir = "0.6.0"
+num-traits = "0.2.14"
+rand = "0.8.3"
