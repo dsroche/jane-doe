@@ -38,10 +38,19 @@ fn main() {
              .help("Display a listing of supported locales"))
         .get_matches();
 
+    // XXX only locale currently supported is "US"
+    if args.is_present("show") {
+        println!("us");
+        return;
+    }
+    let locale = args.value_of("locale").unwrap_or("us");
+    if locale != "us" {
+        panic!("unsupported locale");
+    }
+
     let count = args.value_of("count")
         .map(|s| str::parse(s).expect("count must be a positive integer"))
         .unwrap_or(1usize);
 
-    // TODO
     process(us_names(), count);
 }
